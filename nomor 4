@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class nomor4 {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("masukkan angka awal :");
+        int angkaAwal = input.nextInt();
+
+        System.out.println("masukkan jarak setiap angka :");
+        int jarak = input.nextInt();
+
+        System.out.println("diulang berapa kali :");
+        int ulang = input.nextInt();
+
+        int HasilAritmatika = aritmatika(angkaAwal, jarak, ulang);
+        System.out.println(hasil);
+    }
+
+    private static int hasil = 0;
+
+    private static int aritmatika(int angkaAwal, int jarak, int ulang) {
+        if (ulang > 0) {
+            ulang = ulang - 1;
+            hasil = hasil + angkaAwal;
+            angkaAwal = angkaAwal + jarak;
+            aritmatika(angkaAwal, jarak, ulang);
+        }
+        return hasil;
+    }
+
+}
